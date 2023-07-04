@@ -33,8 +33,7 @@ Server (WAS) – JS(node JS - 자바스크립트 런타임 환경) <br><br>
 <br>
 request가 들어오면 객체가 memory에 있는지 검사 -> 없으면 객체 생성(new) 및 초기화(init) -> ready(준비 상태)
 <br> -> 있으면 바로 준비상태로 -> 이 후 response를 보냄 -> destroy(1번) <br>
-jsp: (jsp 코드 -> java -> class) 과정 + servlet 과정
-	jsp는 곧 servlet의 확장 버전
+jsp: (jsp 코드 -> java -> class) 과정 + servlet 과정으로 jsp는 곧 servlet의 확장 버전
 
 서버 쪽은 데이터 인코딩, 단일값, 배열값을 데이터로 받아옴
 
@@ -47,7 +46,7 @@ jsp: (jsp 코드 -> java -> class) 과정 + servlet 과정
 <p>- MVC 구조 학습
 <br>
 <h2>Session Tracking</h2>
-	HTTP: request/response (비연결성 -> 무상태성): 부족한 자원을 효율적으로 사용 가능
+HTTP: request/response (비연결성 -> 무상태성): 부족한 자원을 효율적으로 사용 가능
 <p>●비연결성: 요청에 대한 응답이 들어오면 연결을 끊음
 <p>●무상태성: 서버가 클라이언트에 대한 상태를 유지하지 않음 – 서버 확장성 증가
 
