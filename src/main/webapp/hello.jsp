@@ -1,11 +1,14 @@
-<%@ page import="java.util.Date" %>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Insert title here</title>
 </head>
-<body style="background-color: skyblue">
-Served at: <%= new Date() %>
+<body style="background-color:skyblue">
+<%for (int i = 0; i < 10; ++i) { %>
+    Servered at : <%=new Date() %> <br/>
+<%} %>
 </body>
 </html>

@@ -1,24 +1,24 @@
 package com.camp.controller;
 
 import com.camp.model.service.UserService;
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serial;
 
-@WebServlet("/login.do")
+@Controller
 public class LoginServlet extends HttpServlet {
 
-    @Serial
     private static final long serialVersionUID = 1L;
-
     private UserService userService = new UserService();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @PostMapping("/login.do")
+    public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("utf-8");
 
         String userId = request.getParameter("userId");
@@ -26,26 +26,35 @@ public class LoginServlet extends HttpServlet {
 
         String name = userService.login(userId, password);
 
-        response.setContentType("text/html;charset=utf-8");
-        PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.print("<head>");
-        out.print("<meta charset='utf-8'>");
-        out.println("</head>");
-        out.println("<body>");
-        if (name != null) {
-            out.println("<h1>" + name + "로그인 성공</h1>");
+        if(name != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("userId",userId);
+            session.setAttribute("userName",name);
+            response.sendRedirect("main.jsp");
         }
-        else{
-            out.println("<h1>로그인 실패</h1>");
-            out.println("<a href='login.jsp'>로그인 다시 하기</a>");
+        else {
+            request.setAttribute("errorMsg","아이디 또는 비밀번호가 일치하지 않습니다.");
+            request.getRequestDispatcher("login.jsp").forward(request,response);
         }
-        out.println("</body>");
-        out.println("</html>");
-       /* String gender = request.getParameter("gender");
-        String[] hobbies = request.getParameterValues("hobby");
-
-        System.out.println(userId + " " + password + " " + gender);
-        System.out.println(Arrays.toString(hobbies));*/
     }
+    /*protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("utf-8");
+
+        String userId = request.getParameter("userId");
+        String password = request.getParameter("password");
+
+        String name = userService.login(userId, password);
+
+        if(name != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("userId",userId);
+            session.setAttribute("userName",name);
+            response.sendRedirect("main.jsp");
+        }
+        else {
+            request.setAttribute("errorMsg","아이디 또는 비밀번호가 일치하지 않습니다.");
+            request.getRequestDispatcher("login.jsp").forward(request,response);
+        }
+    }*/
 }
