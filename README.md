@@ -82,6 +82,13 @@ HTTP: request/response (비연결성 -> 무상태성): 부족한 자원을 효�
 <p>-	기준 interface를 작성, interface에서 작성한 메서드를 각각의 클래스에서 구현</p>
 
 <br>
+<p>Bean - 스프링 컨테이너가 관리하는 객체
+<p>BeanFactory – 빈을 생성하고 의존 관계를 설정
+<p>ApplicationContext – BeanFactory의 확장 버전으로 빈의 생성, 관계 설정 등의 제어를 총괄
+<p>WebApplicationContext – ApplicationContext + ServletContext</p>
+
+
+<br>
 <h2>DI(의존성 주입</h2>
 <p>-	interface를 이용한 설계 필요: 주입될 대상이 바꿀 수 있어야 함
 <p>-	특정 class에 의존 지양
