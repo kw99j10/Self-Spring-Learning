@@ -67,5 +67,47 @@ HTTP: request/response (비연결성 -> 무상태성): 부족한 자원을 효�
 <h2>페이지 이동 기법</h2>
 <p><a>forwarding:</a> 서버 내부에서 요청을 처리함 – URL 변화 X, 요청 & 응답 1번 발생(객체 재사용 O)
 <p><a>redirection:</a> 브라우저에게 새 페이지를 불러오도록 함 – 요청 & 응답이 2번 발생(객체 재사용 X)
+
 <br><hr>
 
+# 3day - DI, AOP
+<br/>
+<h3>주요 내용</h3>
+<p>- 다형성, DI: 의존성 주입
+<p>- AOP: 관점 지향 프로그래밍
+<p>- spring MVC
+<br>
+<h3>다형성</h3>
+<p> - 하나의 객체가 여러 가지 타입을 가질 수 있는 것을 의미함. </p>
+<p>-	기준 interface를 작성, interface에서 작성한 메서드를 각각의 클래스에서 구현</p>
+
+<br>
+<h2>DI(의존성 주입</h2>
+<p>-	interface를 이용한 설계 필요: 주입될 대상이 바꿀 수 있어야 함
+<p>-	특정 class에 의존 지양
+<p>-	객체 직접 생성 x (new 사용 불가)
+<p>-	spring에서 DI컨테이너가 객체들 간의 의존 관계를 주입해줌
+<p>-	가독성, 유연성 높은 코드 작성 가능, 코드 간 결합도 감소
+<h3>방법</h3>
+<p>1.	setter를 이용한 의존성 주입
+<p>2.	생성자를 이용한 의존성 주입
+<p>3.	Autorwire를 이용한 의존성 주입
+<p>4.	Annotation(@)를 이용한 의존성 주입
+<br><br>
+<h2>AOP: 관점 지향 프로그래밍 </h2>
+<p>-	관심사의 분리(독립적인 개발)
+<p>1.	핵심(주요) 관심사: Application이 제공해야하는 주요 기능</p>
+<p>2.	공통(보조) 관심사: 로깅, 예외처리, 트랜잭션, 유효성 검사 등</p>
+<br>
+<p> ex) AOP 기능 사용: spring의 transaction 처리</p><br>
+
+<p>Target – 공통 로직을 가져야 하는 대상
+<p>Advice – 공통 로직
+<p>JoinPoint – advice가 적용될 수 있는 지점(ex: 메소드 호출 전, 메소드 호출 후)
+<p>PointCut - 조인 포인트 중에서 advice가 적용될 위치를 선별하는 기능
+<p>Weaving - pointcut으로 결장한 타겟의 join point에 advice를 적용하는 것</p>
+<br>
+<p>-	동적 proxy로 진짜 객체를 mapping 함 -> weaving시 proxy 객체를 불러옴
+<p>-	weaving 대상이 없다면 진짜 객체를 불러옴
+
+<br><hr>
