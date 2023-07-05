@@ -28,7 +28,8 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
+    implementation 'org.jetbrains:annotations:24.0.1'
+    compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
@@ -36,6 +37,9 @@ dependencies {
 
 	// jakarta.servlet 종속성
 	implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+	//aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
 }
 
 tasks.named('test') {
