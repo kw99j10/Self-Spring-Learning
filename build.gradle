@@ -28,9 +28,12 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.jetbrains:annotations:24.0.1'
-    compileOnly 'org.projectlombok:lombok'
+	implementation 'org.jetbrains:annotations:24.0.1'
+	compileOnly 'org.projectlombok:lombok'
+
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	runtimeOnly 'com.h2database:h2'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter'
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -40,6 +43,10 @@ dependencies {
 
 	//aop
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+	implementation group: 'org.apache.commons', name: 'commons-dbcp2'
+	implementation 'org.mybatis:mybatis:3.5.13'
+	implementation 'org.mybatis:mybatis-spring:3.0.2'
 }
 
 tasks.named('test') {
