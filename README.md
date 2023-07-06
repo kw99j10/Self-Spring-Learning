@@ -118,3 +118,20 @@ HTTP: request/response (비연결성 -> 무상태성): 부족한 자원을 효�
 <p>-	weaving 대상이 없다면 진짜 객체를 불러옴
 
 <br><hr>
+
+# 4day - Data Access
+<br/>
+<h3>주요 내용</h3>
+<p>- DI, AOP 실습
+<p>-Data Access: MyBatis framework 연결</p>
+<br>
+<h2>Data Access</h2>
+<p>DAO <------SQL(DDL, DML, DCL, TCL)-------> DBMS</p>
+<br>
+<p>Java Persistence Framework – 데이터의 저장, 수정, 삭제 및 자동화</p>
+<br>
+<p>- SQL Mapping Framework ex) MyBatis
+
+<p>- Object Relation Mapping Framework ex) Hibernate
+<p>  - JPA: 표준화된 API 사용 (데이터 자동 변환)
+
