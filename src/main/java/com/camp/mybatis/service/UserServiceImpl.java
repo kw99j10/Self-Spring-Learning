@@ -1,31 +1,51 @@
 package com.camp.mybatis.service;
 
-import com.camp.mybatis.dao.UserDAOImplMemory;
+import com.camp.mybatis.dao.UserDAO;
 import com.camp.mybatis.dto.User;
+import com.camp.mybatis.dao.UserDAOImplMemory;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserDAOImplMemory userDao;
-
-    public UserServiceImpl(UserDAOImplMemory userDao) {
+    private UserDAO userDao;
+    public UserServiceImpl(UserDAO userDao) {
         this.userDao = userDao;
     }
 
     @Override
     public String login(User user) {
-        return userDao.selectUser(user);
+        return userDao.selectName(user);
     }
-
-    // 사용자 등록 & 중복 id 검사
     @Override
     public boolean register(User user) {
-        User select = userDao.selectName(user.getUserId());
-        if (select == null) {
+        User existedUser = userDao.selectUser(user.getUserId());
+        if(existedUser == null) {
             userDao.add(user);
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void removeUser(String userId) {
+        userDao.deleteUser(userId);
+    }
+
+    @Override
+    public void modifyUser(User user) {
+        userDao.updateUser(user);
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return userDao.selectUsers();
+    }
+
+    @Override
+    public User getUser(String userId) {
+        return userDao.selectUser(userId);
     }
 }

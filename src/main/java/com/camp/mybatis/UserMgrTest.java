@@ -19,5 +19,14 @@ public class UserMgrTest {
             String name = userService.login(new User("a", "1234"));
             System.out.println("로그인 결과 : " + name);
         }
+        System.out.println(userService.getUser("a"));
+        userService.modifyUser(new User("a", "a", "테스터", "aaa@camp.cmo"));
+        System.out.println(userService.getUser("a"));
+
+        System.out.println("=========================");
+        userService.removeUser("a");
+        for (User user : userService.getUsers()) {
+            System.out.println(user.getName());
+        }
     }
 }
