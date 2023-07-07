@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 
-@Controller
+//@Controller
 public class RegisterServlet {
     private UserService userService = new UserService();
 

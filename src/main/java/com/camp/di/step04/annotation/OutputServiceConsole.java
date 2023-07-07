@@ -2,7 +2,6 @@ package com.camp.di.step04.annotation;
 
 import org.springframework.stereotype.Service;
 
-@Service("outputService")
 public class OutputServiceConsole implements OutputService {
 
     public OutputServiceConsole(){

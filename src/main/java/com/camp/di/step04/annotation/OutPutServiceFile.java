@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@Service
+//@Service
 public class OutPutServiceFile implements OutputService {
     @Override
     public void print(String msg) {

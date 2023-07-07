@@ -2,7 +2,7 @@ package com.camp.aop;
 
 import org.springframework.stereotype.Component;
 
-@Component("greeting")
+//@Component("greeting")
 public class GreetingServiceKO implements GreetingService {
 
     private final OutputService outputService;

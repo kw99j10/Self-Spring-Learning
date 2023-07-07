@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.IOException;
 
-@Controller
+//@Controller
 public class LogoutServlet {
 
     @GetMapping("/logout.do")

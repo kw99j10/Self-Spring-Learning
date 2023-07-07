@@ -2,12 +2,10 @@ package com.camp.mybatis.service;
 
 import com.camp.mybatis.dao.UserDAO;
 import com.camp.mybatis.dto.User;
-import com.camp.mybatis.dao.UserDAOImplMemory;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+//@Service
 public class UserServiceImpl implements UserService {
 
     private UserDAO userDao;
