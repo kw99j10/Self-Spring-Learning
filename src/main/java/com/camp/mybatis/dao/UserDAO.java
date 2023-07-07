@@ -1,18 +1,22 @@
 package com.camp.mybatis.dao;
 
 import com.camp.mybatis.dto.User;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 
+@Mapper
 public interface UserDAO {
-    User selectName(String userId);
+    String selectName(User user);
 
-    String selectUser(User user);
+    User selectUser(String userId);
 
     void add(User user);
 
-    void update(User user);
+    void updateUser(User user);
 
-    void delete(User user);
+    void deleteUser(String userId);
 
-    void findAll();
+    List<User> selectUsers();
 }

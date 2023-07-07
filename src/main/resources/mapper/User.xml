@@ -24,16 +24,18 @@
         values(#{userId},#{password},#{name},#{email})
     </insert>
 
-    <update id="update" parameterType="User">
+    <update id="updateUser">
         update userinfo
-        set
+        set password=#{password},email=#{email}
+        where userId=#{userId}
     </update>
 
-    <delete id="delete" parameterType="User">
-        delete
+    <delete id="deleteUser">
+        delete from userinfo
+        where userId=#{userId}
     </delete>
 
-    <select id="findAll" parameterType="User">
+    <select id="selectUsers" resultType="User">
         select userId,password,name,email
         from userinfo
     </select>
