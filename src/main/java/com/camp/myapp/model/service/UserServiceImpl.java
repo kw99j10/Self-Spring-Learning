@@ -10,7 +10,7 @@ import com.camp.myapp.model.dto.User;
 @Service
 public class UserServiceImpl implements UserService {
 	
-	private UserDAO userDao;
+	private final UserDAO userDao;
 	public UserServiceImpl(UserDAO userDao) {
 		super();
 		this.userDao = userDao;

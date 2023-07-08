@@ -15,7 +15,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		p:driverClassName="org.h2.Driver" 
 		p:url="jdbc:h2:tcp://localhost/~/myapp" 
-		p:username="user01" p:password="1234"
+		p:username="user01"
 	/>
 	
 	<!--  mybatis framework 초기화 관련 설정 -->
