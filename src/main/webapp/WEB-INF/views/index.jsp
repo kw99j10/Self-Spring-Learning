@@ -12,8 +12,9 @@
 	<ul>
 		<li><a href="${root}/user/register_form.do">사용자 등록 </a></li>
 		<li><a href="${root}/user/list.do">사용자 목록</a></li>
-		<li><a href="${root}/api/user/list">사용자 목록-JSON</a></li>
-		<li><a href="${root}/api/user/java">사용자 상세정보-JSON</a></li>
+		<li><a href="${root}/api/uses">사용자 목록-JSON</a></li>
+		<li><a href="${root}/api/users/java">사용자 상세정보-JSON</a></li>
+		<li><a href="${root}/api/users/spring">사용자 상세정보-JSON</a></li>
 	</ul>
 </body>
 </html>
